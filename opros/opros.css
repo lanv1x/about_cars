@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+.header {
+    background-color: #0d1b2a;
+    padding: 25px;
+    text-align: center;
+    font-size: 1.8em;
+    border-bottom: 3px solid #fca311;
+}
+
+.header p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+}
+.nav {
+    margin-top: 15px;
+    background-color: #14213d;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.nav a {
+    color: #fca311;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.form-container {
+    background-color: #1f2a44;
+    width: 65%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(252, 163, 17, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+select, textarea, input[type="color"] {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #e5e5e5;
+    color: #111;
+}
+
+textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.checkboxes label {
+    display: block;
+    margin: 4px 0;
+    font-weight: normal;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #fca311;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #1a1a1a;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffcc33;
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: #4412c180;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    margin-top: 40px;
+    font-weight: 500;
+}

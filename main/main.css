@@ -1,0 +1,440 @@
+body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0d1b2a;
+      color: #f1f1f1;
+    }
+
+    /* Шапка */
+    .header {
+      background-color: #14213d;
+      color: #fca311;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-bottom: 3px solid #fca311;
+    }
+
+    /* Навигация */
+.nav {
+    background-color: #1f2a44;
+    padding: 10px;
+    border-bottom: 2px solid #fca311;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 100%;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu > li > a {
+    color: #fca311;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: inline-block;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.menu > li > a:hover {
+    color: #ffffff;
+    background-color: rgba(252, 163, 17, 0.1);
+    border-radius: 4px;
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .menu {
+        gap: 8px;
+        justify-content: space-around;
+    }
+    
+    .menu > li > a {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+}
+
+    /* Выпадающее меню */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1b263b;
+      border: 1px solid rgba(252, 163, 17, 0.2);
+      border-radius: 8px;
+      min-width: 180px;
+      top: 100%;
+      left: 0;
+      z-index: 5;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: fadeIn 0.25s ease-in;
+    }
+
+    .dropdown-content a {
+      color: #f1f1f1;
+      display: block;
+      padding: 10px 14px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #14213d;
+      color: #fca311;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(6px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Контент */
+    .content {
+      display: flex;
+      margin: 30px;
+      gap: 25px;
+    }
+
+    /* Левая панель */
+    .sidebar {
+      background-color: #1b263b;
+      flex: 1;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(252, 163, 17, 0.2);
+    }
+
+    .sidebar h3 {
+      color: #fca311;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+
+    .sidebar li:hover {
+      color: #fca311;
+    }
+
+    /* Основной блок */
+    .main {
+      background-color: #1b263b;
+      flex: 3;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(252, 163, 17, 0.3);
+    }
+
+    .main h2 {
+      color: #fca311;
+      margin-bottom: 20px;
+    }
+
+    /* Карточки машин */
+    .car-card {
+      background-color: #16213e;
+      padding: 15px;
+      border-left: 5px solid #fca311;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .car-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(252, 163, 17, 0.4);
+    }
+
+    /* Подвал */
+    .footer {
+      background-color: #14213d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-top: 3px solid #fca311;
+      margin-top: 20px;
+    }
+
+    /* Анимации и элементы */
+    .wheel {
+      width: 120px;
+      height: 120px;
+      border: 10px solid #222;
+      border-radius: 50%;
+      border-top-color: #ff4500;
+      border-right-color: #ff8c00;
+      border-bottom-color: #222;
+      border-left-color: #ff4500;
+      position: relative;
+      margin: 40px auto;
+      animation: spin 3s linear infinite;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .rim {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #555 20%, #111 80%);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .engine {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #ff3c00, #800000);
+      border-radius: 50%;
+      margin: 40px auto;
+      animation: pulse 1.2s ease-in-out infinite;
+      box-shadow: 0 0 20px #ff3c00;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #ff3c00;
+      }
+      50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 40px #ff6a00;
+      }
+    }
+    /* слайдер*/
+.slider {
+  width: 80%;
+  max-width: 700px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin: 30px auto;
+  box-shadow: 0 4px 25px rgba(252,163,17,0.3);
+}
+
+.slides {
+  display: flex;
+  width: auto;
+  height: 100%;
+  animation: slide 9s ease-in-out infinite;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bar {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fca311;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.bar:hover {
+  background: #fca311;
+}
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* --- Для планшетов (до 1000px) --- */
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .sidebar, .main {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .menu a {
+    padding: 8px 12px;
+    font-size: 0.95em;
+  }
+
+  .slider {
+    width: 90%;
+    height: 300px;
+  }
+
+  .slide img {
+    height: 300px;
+  }
+
+  .car-card {
+    font-size: 1em;
+  }
+}
+
+/* --- Для телефонов (до 600px) --- */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95em;
+  }
+
+  .header {
+    font-size: 1.2em;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .menu a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(252, 163, 17, 0.2);
+  }
+
+  .content {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .sidebar, .main {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .car-card {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+
+  .footer {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .slider {
+    width: 100%;
+    height: 230px;
+  }
+
+  .slide img {
+    height: 230px;
+  }
+
+  .navigation {
+    bottom: 10px;
+  }
+}
+/* Модальное окно без JS */
+.modal-css {
+  display: none;
+  position: fixed; /* фиксируем поверх страницы */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9999;
+  overflow: auto;
+}
+
+.modal-css:target {
+  display: block;
+}
+
+.modal-content-css {
+  background-color: #1b263b;
+  color: #f1f1f1;
+  margin: 10% auto;
+  padding: 20px;
+  border: 3px solid #fca311;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-close-css {
+  color: #fca311;
+  text-decoration: none;
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+}
+
+.modal-close-css:hover {
+  color: #ffffff;
+}

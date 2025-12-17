@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос о машинах</title>
+    <link rel="stylesheet" href="opros.css">
+</head>
+<body>
+    <header class="header">
+    <h1>🚗 Опрос: Ваши предпочтения в автомобилях</h1>
+    <p>Нам важно узнать ваше мнение об автомобилях и автопромышленности!</p>
+
+    <nav class="nav">
+        <a href="main.html">Главная</a> |
+        <a href="opros.html">Опрос</a> |
+        <a href="registration.html">Регистрация</a> |
+        <a href="catalog.html">Каталог</a> |
+        <a href="contact.html">Контакты</a> |
+        <a href="vintage_cars.html">Винтажные машины</a>
+    </nav>
+    </header>
+
+    <main class="form-container">
+        <form>
+            <label>1. Какая марка автомобиля вам нравится больше всего?</label>
+            <select>
+                <option>BMW</option>
+                <option>Mercedes-Benz</option>
+                <option>Toyota</option>
+                <option>Audi</option>
+                <option>Lexus</option>
+                <option>Hyundai</option>
+                <option>Другое</option>
+            </select>
+
+            <label>2. Какой тип кузова вы предпочитаете?</label>
+            <select>
+                <option>Седан</option>
+                <option>Кроссовер (SUV)</option>
+                <option>Хэтчбек</option>
+                <option>Купе</option>
+                <option>Пикап</option>
+                <option>Универсал</option>
+            </select>
+
+            <label>3. Какое топливо вы считаете оптимальным?</label>
+            <div class="checkboxes">
+                <label><input type="radio" name="fuel"> Бензин</label>
+                <label><input type="radio" name="fuel"> Дизель</label>
+                <label><input type="radio" name="fuel"> Электричество</label>
+                <label><input type="radio" name="fuel"> Гибрид (бензин + электричество)</label>
+            </div>
+
+            <label>4. Что для вас важнее при выборе автомобиля?</label>
+            <div class="checkboxes">
+                <label><input type="checkbox"> Скорость и мощность</label>
+                <label><input type="checkbox"> Комфорт и интерьер</label>
+                <label><input type="checkbox"> Безопасность</label>
+                <label><input type="checkbox"> Экономия топлива</label>
+                <label><input type="checkbox"> Внешний дизайн</label>
+                <label><input type="checkbox"> Цена и обслуживание</label>
+            </div>
+
+            <label>5. Какой тип коробки передач вы предпочитаете?</label>
+            <div class="checkboxes">
+                <label><input type="radio" name="gearbox"> Механическая (МКПП)</label>
+                <label><input type="radio" name="gearbox"> Автоматическая (АКПП)</label>
+                <label><input type="radio" name="gearbox"> Вариатор (CVT)</label>
+                <label><input type="radio" name="gearbox"> Роботизированная</label>
+            </div>
+
+            <label>6. Какого цвета автомобиль вы бы выбрали?</label>
+            <input type="color" value="#000000">
+
+            <label>7. Какой класс автомобиля вы предпочитаете?</label>
+            <select>
+                <option>Эконом (A, B)</option>
+                <option>Средний (C, D)</option>
+                <option>Бизнес (E)</option>
+                <option>Премиум (F)</option>
+                <option>Спортивный (S)</option>
+                <option>Внедорожник (SUV)</option>
+            </select>
+
+            <label>8. Сколько лет вашему текущему автомобилю?</label>
+            <select>
+                <option>Нет автомобиля</option>
+                <option>Менее 1 года</option>
+                <option>1–3 года</option>
+                <option>3–5 лет</option>
+                <option>Более 5 лет</option>
+            </select>
+
+            <label>9. Как часто вы обслуживаете свой автомобиль?</label>
+            <div class="checkboxes">
+                <label><input type="radio" name="service"> Каждый 6 месяцев</label>
+                <label><input type="radio" name="service"> Раз в год</label>
+                <label><input type="radio" name="service"> Только при проблемах</label>
+            </div>
+
+            <label>10. Оставьте ваш комментарий:</label>
+            <textarea placeholder="Например: хочу больше электромобилей в Казахстане..."></textarea>
+
+            <button type="submit">Отправить ответы</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 AUTOMAX | Спасибо за участие в опросе!</p>
+    </footer>
+
+</body>
+</html>

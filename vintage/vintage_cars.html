@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Винтажные автомобили | AUTOMAX</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+
+        .vintage-header {
+            background-color: #002c8b3b;
+            color: #fca311;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 30px;
+            border: 3px solid #DAA520;
+        }
+        
+        .vintage-container {
+            display: flex;
+            margin: 30px;
+            gap: 25px;
+        }
+        
+        .vintage-sidebar {
+            background-color: #1b263b;
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
+            border: 2px solid #DAA520;
+        }
+        
+        .vintage-main {
+            background-color: #1b263b;
+            flex: 3;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.4);
+            border: 2px solid #DAA520;
+        }
+        
+        .era-card {
+            background-color: #16213e;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #DAA520;
+            transition: all 0.3s;
+        }
+        
+        .era-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3);
+        }
+        
+        .era-card h3 {
+            color: #DAA520;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .vintage-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .vintage-photo {
+            width: calc(33.333% - 10px);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #DAA520;
+            transition: transform 0.3s;
+        }
+        
+        .vintage-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .vintage-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .vintage-photo p {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fca311;
+            padding: 8px;
+            text-align: center;
+            margin: 0;
+            font-size: 0.9em;
+        }
+        
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background-color: #16213e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #DAA520;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .feature-item h4 {
+            color: #fca311;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-item h4::before {
+            content: "★";
+            color: #DAA520;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #DAA520;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 60px;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #8B0000;
+            color: #fca311;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            border: 2px solid #DAA520;
+        }
+        
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .brand-card {
+            background-color: #16213e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .brand-card:hover {
+            border-color: #DAA520;
+            transform: translateY(-5px);
+        }
+        
+        .brand-card h4 {
+            color: #fca311;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 1000px) {
+            .vintage-container {
+                flex-direction: column;
+                margin: 20px;
+            }
+            
+            .vintage-photo {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .vintage-container {
+                margin: 10px;
+            }
+            
+            .vintage-header {
+                margin: 10px;
+                padding: 10px;
+            }
+            
+            .vintage-photo {
+                width: 100%;
+            }
+            
+            .feature-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">AUTOMAX — Винтажные автомобили</header>
+
+<nav class="nav">
+    <ul class="menu">
+        <li><a href="main.html">Главная</a></li>
+        <li class="dropdown">
+            <a href="#">Автомобили ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="https://auto.mail.ru/article/103191-luchshie-pikapy/?ysclid=miq7b1lvfh604745677" target="_blank">Пикапы</a></li>
+                <li><a href="https://favorit-motors.ru/articles/vybor-avtomobilya/kabriolet/?ysclid=miq7d8p2qs382264184" target="_blank">Кабриолеты</a></li>
+                <li><a href="https://www.limuzin-moskva.ru/stati/kakiye-byvayut-limuziny?ysclid=miq7f17kyr313015355" target="_blank">Лимузин</a></li>
+                <li><a href="vintage_cars.html">Винтажные</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Сервисы ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="opros.html">Опрос</a></li>
+                <li><a href="registration.html">Регистрация</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Контакты</a></li>
+    </ul>
+</nav>
+
+<div class="vintage-header">
+    <h2>🚗 Винтажные автомобили 1930-1970-х годов 🚗</h2>
+    <p>Классика, которая никогда не выходит из моды</p>
+</div>
+
+<div class="vintage-container">
+    <aside class="vintage-sidebar">
+        <h3>Исторические эпохи</h3>
+        
+        <div class="era-card">
+            <h3>1930-е годы</h3>
+            <p>Эпоха ар-деко и роскоши. Автомобили становятся более доступными.</p>
+            <ul>
+                <li>Cadillac V-16</li>
+                <li>Bugatti Type 57</li>
+                <li>Mercedes-Benz 540K</li>
+            </ul>
+        </div>
+        
+        <div class="era-card">
+            <h3>1940-е годы</h3>
+            <p>Военное время и послевоенное восстановление. Функциональность превыше всего.</p>
+            <ul>
+                <li>Willys MB (Джип)</li>
+                <li>Ford Super Deluxe</li>
+                <li>Chevrolet Fleetline</li>
+            </ul>
+        </div>
+        
+        <div class="era-card">
+            <h3>1950-е годы</h3>
+            <p>Золотой век автомобилестроения. Появление хромированных деталей и "плавников".</p>
+            <ul>
+                <li>Chevrolet Bel Air</li>
+                <li>Ford Thunderbird</li>
+                <li>Cadillac Eldorado</li>
+            </ul>
+        </div>
+        
+        <div class="era-card">
+            <h3>1960-е годы</h3>
+            <p>Эпоха Muscle Cars и спортивных автомобилей. Мощность и скорость.</p>
+            <ul>
+                <li>Ford Mustang</li>
+                <li>Chevrolet Corvette</li>
+                <li>Porsche 911</li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="vintage-main">
+        <h2 style="color: #fca311;">Легенды винтажного авто мира</h2>
+        
+        <div class="era-card">
+            <h3>Почему винтажные авто так ценятся?</h3>
+            <p>Винтажные автомобили - это не просто транспорт, это произведения искусства, история на колесах и символы своей эпохи. Каждая модель имеет уникальный характер, ручную сборку и дизайн, который больше никогда не повторится.</p>
+            <p>В отличие от современных автомобилей, винтажные модели имеют душу - они создавались вручную мастерами, которые вкладывали в каждую деталь частичку себя.</p>
+        </div>
+        
+        <h3 style="color: #fca311; margin-top: 30px;">Галерея винтажных авто</h3>
+        <div class="vintage-gallery">
+            <div class="vintage-photo">
+                <img src="Ford Mustang 1968.jpeg" alt="Ford Mustang 1968">
+                <p>Ford Mustang 1968</p>
+            </div>
+            <div class="vintage-photo">
+                <img src="Chevrolet Corvette 1967.jpg" alt="Chevrolet Corvette">
+                <p>Chevrolet Corvette 1967</p>
+            </div>
+            <div class="vintage-photo">
+                <img src="Mercedes-Benz 300SL.png" alt="Mercedes-Benz">
+                <p>Mercedes-Benz 300SL</p>
+            </div>
+        </div>
+        
+        <h3 style="color: #fca311; margin-top: 30px;">Особенности винтажных авто</h3>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h4>Уникальный дизайн</h4>
+                <p>Каждая модель имеет неповторимый внешний вид, созданный художниками и дизайнерами</p>
+            </div>
+            <div class="feature-item">
+                <h4>Ручная сборка</h4>
+                <p>Детали подгонялись вручную, что обеспечивало высочайшее качество</p>
+            </div>
+            <div class="feature-item">
+                <h4>Натуральные материалы</h4>
+                <p>Кожа, дерево, хром - никакого пластика и искусственных материалов</p>
+            </div>
+            <div class="feature-item">
+                <h4>Инвестиционная ценность</h4>
+                <p>Хорошие винтажные авто с годами только растут в цене</p>
+            </div>
+        </div>
+        
+        <h3 style="color: #fca311; margin-top: 30px;">Историческая хронология</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1934</div>
+                <h4>.    Первое массовое производство</h4>
+                <p>Начало эры доступных автомобилей для среднего класса</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1948</div>
+                <h4>.    Послевоенный бум</h4>
+                <p>Автопроизводители возобновляют выпуск гражданских моделей</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1955</div>
+                <h4>.    Золотая эра дизайна</h4>
+                <p>Появление культовых моделей с хромированными деталями</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1964</div>
+                <h4>.    Революция Mustang</h4>
+                <p>Ford представляет Mustang - родоначальник класса Pony Car</p>
+            </div>
+        </div>
+        
+        <h3 style="color: #fca311; margin-top: 30px;">Легендарные бренды</h3>
+        <div class="brand-grid">
+            <div class="brand-card">
+                <div style="font-size: 2em; color: #DAA520;">🏎️</div>
+                <h4>Ferrari</h4>
+                <p>Итальянская страсть и скорость</p>
+            </div>
+            <div class="brand-card">
+                <div style="font-size: 2em; color: #DAA520;">🚘</div>
+                <h4>Rolls-Royce</h4>
+                <p>Британская роскошь и элегантность</p>
+            </div>
+            <div class="brand-card">
+                <div style="font-size: 2em; color: #DAA520;">🚙</div>
+                <h4>Cadillac</h4>
+                <p>Американские "плавники" и хром</p>
+            </div>
+            <div class="brand-card">
+                <div style="font-size: 2em; color: #DAA520;">🏁</div>
+                <h4>Porsche</h4>
+                <p>Немецкая точность и инженерия</p>
+            </div>
+        </div>
+        
+        <div class="era-card" style="margin-top: 30px;">
+            <h3>Как выбрать винтажный автомобиль?</h3>
+            <ol>
+                <li><strong>Определите бюджет</strong> - винтажные авто требуют вложений в обслуживание</li>
+                <li><strong>Выберите эпоху</strong> - каждая десятилетка имеет свой характер</li>
+                <li><strong>Проверьте состояние</strong> - оригинальные детали ценятся выше</li>
+                <li><strong>Найдите специалиста</strong> - для оценки и обслуживания</li>
+                <li><strong>Приготовьтесь к ремонту</strong> - запчасти могут быть редкими</li>
+            </ol>
+            <p style="margin-top: 15px; color: #fca311; font-weight: bold;">Винтажный автомобиль - это не просто покупка, это история, которую вы продолжаете!</p>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div style="text-align: center; padding: 10px;">
+            <h4 style="color: #fca311;">Контакты</h4>
+            <p>📞 +7 (777) 123-45-67</p>
+            <p>✉️ automax@gmail.kz</p>
+        </div>
+        <div style="text-align: center; padding: 10px;">
+            <h4 style="color: #fca311;">Клуб винтажных авто</h4>
+            <p>Встречи каждую субботу</p>
+            <p>Ретро-ралли 2 раза в год</p>
+        </div>
+        <div style="text-align: center; padding: 10px;">
+            <h4 style="color: #fca311;">Реставрация</h4>
+            <p>Восстановление классики</p>
+            <p>Поиск оригинальных запчастей</p>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 20px;">© 2025 AUTOMAX | Мир винтажных автомобилей</p>
+</footer>
+
+</body>
+</html>

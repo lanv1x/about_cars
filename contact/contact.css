@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #0f1624;
+    color: #fff;
+}
+
+.header {
+    background: #0c1220;
+    color: #ffb400;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #ffb400;
+}
+
+.nav a {
+    color: #ffb400;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #ffb400;
+}
+
+.main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    gap: 40px;
+}
+
+.contact-info, .map, .feedback {
+    background: #141b2d;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255,180,0,0.2);
+    transition: 0.4s;
+}
+
+.contact-info:hover, .map:hover, .feedback:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255,180,0,0.4);
+}
+
+.socials {
+    margin-top: 15px;
+}
+.socials a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #ffb400;
+    transition: 0.3s;
+}
+.socials a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffb400;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+input, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #1c2540;
+    color: white;
+}
+button {
+    padding: 12px;
+    background: linear-gradient(90deg, #ffb400, #ff6600);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffb400;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #0c1220;
+    color: #aaa;
+    border-top: 1px solid #ffb400;
+}
